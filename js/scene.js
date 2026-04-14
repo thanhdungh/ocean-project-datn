@@ -3,19 +3,20 @@ import * as THREE from 'three';
 export function createScene(canvas) {
     const scene = new THREE.Scene();
 
-    const shallowColor = new THREE.Color(0x87cfee);
+    const shallowColor = new THREE.Color(0x87ceeb);
     scene.background = shallowColor;
-    scene.fog = new THREE.Fog(0x87cfee, 120, 900);
+    scene.fog = new THREE.Fog(0x87ceeb, 80, 260);
 
     const camera = new THREE.PerspectiveCamera(
-        60,
+        75,
         window.innerWidth / window.innerHeight,
         0.1,
-        2000
+        1000
     );
 
-    camera.position.set(0, 18, 84);
-    camera.lookAt(0, 6, 0);
+    // Start above the water and look toward the horizon.
+    camera.position.set(0, 8, 42);
+    camera.lookAt(0, 6, -120);
 
     const renderer = new THREE.WebGLRenderer({
         canvas,
@@ -25,12 +26,12 @@ export function createScene(canvas) {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    const hemiLight = new THREE.HemisphereLight(0xdff5ff, 0x18425b, 1.3);
-    scene.add(hemiLight);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
 
-    const sunLight = new THREE.DirectionalLight(0xfff1c2, 1.8);
-    sunLight.position.set(180, 160, -120);
-    scene.add(sunLight);
+    const pointLight = new THREE.PointLight(0xffffff, 50);
+    pointLight.position.set(20, 30, 20);
+    scene.add(pointLight);
 
-    return { scene, camera, renderer, shallowColor, sunLight };
+    return { scene, camera, renderer, shallowColor };
 }

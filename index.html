@@ -6,24 +6,20 @@
   <link rel="stylesheet" href="style.css">
 
   <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-      }
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
     }
+  }
   </script>
 </head>
+
 <body>
   <canvas id="webgl"></canvas>
 
-  <div id="hud">
-    <div class="hud-title">Ocean Scene</div>
-    <div>Dang hien thi lai mat bien, bau troi va mat troi.</div>
-    <div>Ban nay tam thoi bo controls cu de co scene on dinh.</div>
-  </div>
+  <button id="diveBtn">Lặn</button>
 
-  <button id="diveBtn">Lan</button>
   <div id="overlay"></div>
 
   <script type="module" src="main.js"></script>
