@@ -1,1 +1,38 @@
-import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js'; export function createControls(camera) { const controls = new PointerLockControls(camera, document.body); function enableMovement() { controls.lock(); } function setupMovement() { document.addEventListener('keydown', (e) => { if (!controls.isLocked) return; if (e.key === 'w') controls.moveForward(0.2); if (e.key === 's') controls.moveForward(-0.2); if (e.key === 'a') controls.moveRight(-0.2); if (e.key === 'd') controls.moveRight(0.2); }); } return { controls, enableMovement, setupMovement }; }
+import * as THREE from 'three';
+
+export function createControls(camera) {
+    let mode = 'intro';
+
+    function update() {}
+
+    function startDiveMode() {
+        mode = 'diving';
+    }
+
+    function enableExploreMode() {
+        mode = 'explore';
+    }
+
+    function requestExploreLock() {}
+
+    function getDiveTarget() {
+        const forward = new THREE.Vector3();
+        camera.getWorldDirection(forward);
+
+        return {
+            position: camera.position.clone().add(new THREE.Vector3(0, -14, 6)),
+            lookAt: camera.position.clone().add(forward.multiplyScalar(40)).setY(-8)
+        };
+    }
+
+    return {
+        update,
+        startDiveMode,
+        enableExploreMode,
+        requestExploreLock,
+        getDiveTarget,
+        get mode() {
+            return mode;
+        }
+    };
+}
