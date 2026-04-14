@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ocean 3D</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="webgl"></canvas>
+
+  <div id="hud">
+    <div class="hud-title">Surface Controls</div>
+    <div>W/S: tien lui thuyen</div>
+    <div>A/D: xoay thuyen</div>
+    <div>Giu chuot trai va keo: xoay camera quanh thuyen</div>
+    <div>Sau khi lan: W/A/S/D + chuot de boi</div>
+  </div>
+
+  <button id="diveBtn">Lan</button>
+  <div id="overlay"></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
