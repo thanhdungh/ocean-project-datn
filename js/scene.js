@@ -15,8 +15,8 @@ export function createScene(canvas) {
     );
 
     // Start above the water and look toward the horizon.
-    camera.position.set(0, 8, 42);
-    camera.lookAt(0, 6, -120);
+    camera.position.set(-40, 40, -52);
+    camera.lookAt(60, -50, -160);
 
     const renderer = new THREE.WebGLRenderer({
         canvas,

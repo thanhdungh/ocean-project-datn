@@ -58,7 +58,7 @@ loader.load('/models/projects/boat.glb', (gltf) => {
 function animate() {
     requestAnimationFrame(animate);
 
-    water.material.uniforms.time.value += 0.02;
+    water.material.uniforms.time.value += 0.004;
 
     dive.update();
 
