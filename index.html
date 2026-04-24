@@ -14,12 +14,21 @@
   }
   </script>
 </head>
-
 <body>
   <canvas id="webgl"></canvas>
 
-  <button id="diveBtn">Lặn</button>
+  <div id="intro-screen">
+    <div id="intro-panel">
+      <div class="intro-eyebrow">Ocean Intro</div>
+      <h1>Load Boat</h1>
+      <p id="loading-text">Loading 3D Boat...</p>
+      <p id="progress">0%</p>
+      <button id="startBtn">Start</button>
+      <div class="intro-help">W/S: Move Forward/Backward, A/D: Rotate Boat</div>
+    </div>
+  </div>
 
+  <button id="diveBtn">Lặn</button>
   <div id="overlay"></div>
 
   <script type="module" src="main.js"></script>
