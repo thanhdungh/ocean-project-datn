@@ -16,9 +16,9 @@ export function createWater(scene) {
         ),
 
         sunDirection: new THREE.Vector3(1, 1, 1),
-        sunColor: 0xffffff,
-        waterColor: 0x006994,
-        distortionScale: 4.0,
+        sunColor: 0xffb37a,
+        waterColor: 0x1f6477,
+        distortionScale: 1.8,
         fog: scene.fog !== undefined
     });
 

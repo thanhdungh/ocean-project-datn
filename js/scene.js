@@ -3,7 +3,7 @@ import * as THREE from 'three';
 export function createScene(canvas) {
     const scene = new THREE.Scene();
 
-    const shallowColor = new THREE.Color(0x87ceeb);
+    const shallowColor = new THREE.Color(0x8fa7b4);
     scene.background = shallowColor;
     scene.fog = new THREE.Fog(0x87ceeb, 80, 260);
 
@@ -24,12 +24,12 @@ export function createScene(canvas) {
     });
 
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffdfbf, 0.32);
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0xffffff, 50);
+    const pointLight = new THREE.PointLight(0xffb47a, 16);
     pointLight.position.set(20, 30, 20);
     scene.add(pointLight);
 

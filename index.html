@@ -9,7 +9,9 @@
   {
     "imports": {
       "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+      "three-subdivide": "https://cdn.jsdelivr.net/npm/three-subdivide@1.1.2/build/index.module.js",
+      "lil-gui": "https://unpkg.com/lil-gui@0.19.1/dist/lil-gui.esm.min.js"
     }
   }
   </script>
@@ -24,11 +26,15 @@
       <p id="loading-text">Loading 3D Boat...</p>
       <p id="progress">0%</p>
       <button id="startBtn">Start</button>
-      <div class="intro-help">W/S: Move Forward/Backward, A/D: Rotate Boat</div>
+      <div class="intro-help">Boat drifts with the waves. Press Dive when ready.</div>
     </div>
   </div>
 
-  <button id="diveBtn">Lặn</button>
+  <div id="hero-ui">
+    <h1>OCEAN</h1>
+    <p>Explore the deep sea</p>
+    <button id="diveBtn">Lặn</button>
+  </div>
   <div id="overlay"></div>
 
   <script type="module" src="main.js"></script>
